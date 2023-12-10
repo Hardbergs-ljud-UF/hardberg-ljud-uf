@@ -1,2 +1,41 @@
 ---
 ---
+
+body {
+    --background: #F8F4EE;
+    --text: #0B0A07;
+    --primary: #1ED5E8;
+    --secondary: #0E1333;
+    --accent: #F97F08;
+}
+@media (prefers-color-scheme: dark) {
+    body {
+        --background: #0B0A07;
+        --text: #F8F4EE;
+        --primary: #1ED5E8;
+        --secondary: #0E1333;
+        --accent: #F97F08;
+    }
+}
+
+body {
+    background-color: var(--background)
+}
+h1 {
+    color: var(--text)
+}
+h2 {
+    color: var(--text)
+}
+h3 {
+    color: var(--text)
+}
+p {
+    color: var(--text)
+}
+div {
+    color: var(--text)
+}
+
+@import "header.scss";
+@import "footer.scss";
