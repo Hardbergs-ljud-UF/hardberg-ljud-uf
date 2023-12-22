@@ -3,21 +3,39 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title></title>
+        <title>Coming Soon</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="/assets/css/style.css" rel="stylesheet">
     </head>
 
     <body>
-        <div class="text">
-            {% for i in (1..5) %}
-            <div class="row">
-                {% for j in (1..10) %}
-                <h1>Coming Soon</h1>
-                {% endfor %}
+        <header>
+            <!-- This is ugly but works :) -->
+            <div class="scroller">
+                <div class="scroller-inner">
+                    {% for i in (1..10) %}
+                    <h1>| <span>Harbergs Ljud</span>, Coming Soon |</h1>
+                    {% endfor %}
+                </div>
             </div>
-            {% endfor %}
-        </div>
+        </header>
+        <main>
+            <div class="rectangle">
+                <div class="text">
+                    <h1>Coming Soon</h1>
+                    <h1>Coming Soon</h1>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="scroller">
+                <div class="scroller-inner">
+                    {% for i in (1..10) %}
+                    <h1>| <span>Harbergs Ljud</span>, Coming Soon |</h1>
+                    {% endfor %}
+                </div>
+            </div>
+        </footer>
     </body>
 </html>
