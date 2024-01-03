@@ -1,8 +1,6 @@
 # hardberg-ljud-uf
 Our website, yes it was a spelling mistake, no I won't fix it
 
-## Work in Progress
-
 ## Contributing
 We use Jekyll with the `github-pages` gem to generate the site, so make sure you have a correct environment set up
 
