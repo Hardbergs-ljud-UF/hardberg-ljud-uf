@@ -17,3 +17,5 @@ We use Jekyll with the `github-pages` gem to generate the site, so make sure you
 2. make the changes
 3. Create a merge request into `#main`
 4. If we think the changes are good, we will approve it
+
+#### In both cases you could also commit to a new branch instead of making it from the start, if you prefer, but you won't be able to commit directly
