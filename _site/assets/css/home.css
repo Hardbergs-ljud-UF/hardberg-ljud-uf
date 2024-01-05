@@ -1,0 +1,6 @@
+h1 { font-weight: 100; }
+h1 span { font-weight: 500; }
+
+.subtext { display: grid; grid-template-columns: 1fr 1fr; }
+
+svg { width: 100px; height: 100px; }
