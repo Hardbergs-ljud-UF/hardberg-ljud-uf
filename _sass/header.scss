@@ -98,13 +98,13 @@ header {
     }
 }
 
-@media (max-width: 768px) { // 768px is chosen at random, find exact width later
+@media (max-width: 630px) {
     .nav-link {
         border-bottom: solid 0.1em var(--secondary);
     }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 631px) {
     header {
         flex-direction: row;
     }
