@@ -1,5 +1,7 @@
 .content { margin-left: 1rem; margin-right: 1rem; }
 
+.start { display: flex; flex-direction: column; align-items: center; }
+
 h1 { text-align: center; }
 h1 span { font-weight: 500; }
 
@@ -14,8 +16,18 @@ h1 span { font-weight: 500; }
 .subtext .repairability svg { fill: white; height: clamp(1rem, calc(1.2rem + 5vw), 3rem); }
 .subtext .repairability p { margin: 0.5rem; font-size: clamp(0.2rem, calc(1rem + 2vw), 2.5rem); }
 
-.buy { height: 5rem; overflow: hidden; background: linear-gradient(93deg, var(--primary), var(--secondary)); border-radius: 3rem; margin-top: 3rem; }
+.buy { height: 5rem; overflow: hidden; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 3rem; margin-top: 3rem; width: 15rem; }
 .buy .buy-text { padding: 0rem 1rem 0rem 1rem; transition: 0.4s cubic-bezier(0.3, 0.8, 0.8, 0.3); transform: translateY(-80%); }
 .buy .buy-text h2 { font-size: 3rem; text-align: center; color: var(--accent); }
 
 .buy:hover .buy-text { transform: translateY(-20%); }
+
+@media (min-width: 631px) { .start { flex-direction: row; }
+  .start .subtext { display: flex; align-items: center; }
+  .start .subtext p { max-width: 14ch; font-size: clamp(0.2rem, calc(0.5rem + 2vw), 2.5rem); }
+  .start .subtext .one-place { padding: 1rem; }
+  .start .subtext .one-place p { margin: 0; min-width: 20rem; }
+  .start .subtext .clean { flex-direction: column; border: none; border-left: 0.1rem solid var(--primary); border-right: 0.1rem solid var(--primary); padding: 1rem; }
+  .start .subtext .clean p { margin: 0; }
+  .start .subtext .repairability { flex-direction: column; border: none; padding: 1rem; }
+  .start .subtext .repairability p { margin: 0; } }

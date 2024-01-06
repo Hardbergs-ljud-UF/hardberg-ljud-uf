@@ -6,6 +6,12 @@
     margin-right: 1rem;
 }
 
+.start {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 h1 {
     text-align: center;
 
@@ -79,10 +85,11 @@ h1 {
     height: 5rem;
     overflow: hidden;
 
-    background: linear-gradient(93deg, var(--primary), var(--secondary));
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
     border-radius: 3rem;
 
     margin-top: 3rem;
+    width: 15rem;
 
     .buy-text {
         padding: 0rem 1rem 0rem 1rem;
@@ -98,4 +105,50 @@ h1 {
 }
 .buy:hover .buy-text {
     transform: translateY(-20%);
+}
+
+
+@media (min-width: 631px) {
+    .start {
+        flex-direction: row;
+
+        .subtext {
+            display: flex;
+            align-items: center;
+
+            p {
+                max-width: 14ch;
+                font-size: clamp(0.2rem, calc(0.5rem + 2vw), 2.5rem);
+            }
+
+            .one-place {
+                padding: 1rem;
+
+                p {
+                    margin: 0;
+                    min-width: 20rem;
+                }
+            }
+            .clean {
+                flex-direction: column;
+                border: none;
+                border-left: 0.1rem solid var(--primary);
+                border-right: 0.1rem solid var(--primary);
+                padding: 1rem;
+
+                p {
+                    margin: 0;
+                }
+            }
+            .repairability {
+                flex-direction: column;
+                border: none;
+                padding: 1rem;
+
+                p {
+                    margin: 0;
+                }
+            }
+        }
+    }
 }
