@@ -44,6 +44,15 @@ p {
 div {
     color: var(--text);
 }
+::-webkit-scrollbar {
+    width: 0.75em;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
 
 @import "header.scss";
 @import "footer.scss";

@@ -7,27 +7,75 @@ h1 span { font-weight: 500; }
 
 .subtext { display: grid; grid-template-columns: 1fr 1fr; }
 .subtext .one-place { display: flex; flex-direction: column; align-items: center; }
-.subtext .one-place div svg { stroke: white; height: clamp(1rem, calc(1.5rem + 5vw), 3rem); }
+.subtext .one-place div svg { stroke: var(--text); height: clamp(1rem, calc(1.5rem + 5vw), 3rem); }
 .subtext .one-place p { font-size: clamp(0.2rem, calc(0.7rem + 2vw), 2.5rem); margin-top: 0; }
 .subtext .clean { display: flex; align-items: center; justify-content: center; gap: 0.5rem; border-top: 0.1rem solid var(--primary); border-bottom: 0.1rem solid var(--primary); }
-.subtext .clean svg { stroke: white; height: clamp(1rem, calc(1.2rem + 5vw), 3rem); }
+.subtext .clean svg { stroke: var(--text); height: clamp(1rem, calc(1.2rem + 5vw), 3rem); }
 .subtext .clean p { margin: 0.5rem; font-size: clamp(0.2rem, calc(1rem + 2vw), 2.5rem); }
 .subtext .repairability { display: flex; align-items: center; justify-content: center; gap: 0.5rem; border-top: 0.1rem solid var(--primary); border-bottom: 0.1rem solid var(--primary); }
-.subtext .repairability svg { fill: white; height: clamp(1rem, calc(1.2rem + 5vw), 3rem); }
+.subtext .repairability svg { fill: var(--text); height: clamp(1rem, calc(1.2rem + 5vw), 3rem); }
 .subtext .repairability p { margin: 0.5rem; font-size: clamp(0.2rem, calc(1rem + 2vw), 2.5rem); }
 
-.buy { height: 5rem; overflow: hidden; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 3rem; margin-top: 3rem; width: 15rem; }
-.buy .buy-text { padding: 0rem 1rem 0rem 1rem; transition: 0.4s cubic-bezier(0.3, 0.8, 0.8, 0.3); transform: translateY(-80%); }
-.buy .buy-text h2 { font-size: 3rem; text-align: center; color: var(--accent); }
+.buy-circle { width: 100%; }
+.buy-circle p { font-size: 0; }
+.buy-circle a { text-decoration: none; }
+.buy-circle .buy { height: 5rem; overflow: hidden; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 3rem; margin-top: 3rem; }
+.buy-circle .buy .buy-text { padding: 0rem 1rem 0rem 1rem; transition: 0.4s cubic-bezier(0.3, 0.8, 0.8, 0.3); transform: translateY(-80%); }
+.buy-circle .buy .buy-text h2 { font-size: 3rem; text-align: center; color: var(--accent); }
 
 .buy:hover .buy-text { transform: translateY(-20%); }
 
-@media (min-width: 631px) { .start { flex-direction: row; }
+.why-lm1, .why-hardberg, .why-not-contact { padding-top: 0.5em; font-weight: 300; font-size: 2.5em; }
+
+.slideshow, .about-hardberg, .profiles { background-color: var(--secondary); padding: 0.1em; border-radius: 1em; max-width: 100%; }
+
+.slideshow { position: relative; max-width: 70ch; }
+.slideshow .slides { margin-left: 2em; padding-bottom: 1em; margin-right: 2em; }
+.slideshow .slides p { display: block; color: #F8F4EE; }
+.slideshow .slideshow-buttons, .slideshow .title-container { text-align: center; }
+.slideshow .slideshow-buttons .slideshow-prev, .slideshow .slideshow-buttons .slideshow-next, .slideshow .title-container .slideshow-prev, .slideshow .title-container .slideshow-next { padding: 0.4em; font-size: 1.5em; cursor: pointer; user-select: none; position: absolute; top: 3em; color: #F8F4EE; }
+.slideshow .slideshow-buttons .slideshow-next, .slideshow .title-container .slideshow-next { right: 0; }
+.slideshow .slideshow-buttons .slideshow-prev, .slideshow .title-container .slideshow-prev { left: 0; }
+.slideshow .slideshow-buttons .slideshow-next:hover, .slideshow .slideshow-buttons .slideshow-prev:hover, .slideshow .title-container .slideshow-next:hover, .slideshow .title-container .slideshow-prev:hover { background-color: #04040f; border-radius: 0.5em; }
+.slideshow .slideshow-buttons .spacer, .slideshow .title-container .spacer { color: #F8F4EE; font-weight: 300; }
+.slideshow .slideshow-buttons h3, .slideshow .title-container h3 { display: inline-block; }
+.slideshow .title, .slideshow .title-active { display: inline-block; cursor: pointer; transition: 0.25s; }
+.slideshow .title { color: var(--primary); }
+.slideshow .title-active { color: var(--accent); }
+.slideshow .title:hover { color: var(--accent); }
+
+.about-hardberg { padding-bottom: 1em; text-align: center; max-width: 70ch; }
+.about-hardberg .about-btn { background-color: var(--primary); color: var(--secondary); text-decoration: none; padding: 0.1em 0.5em; border-radius: 1em; font-size: 2em; transition: 0.25s ease; }
+.about-hardberg .about-btn:hover { background-color: #0e1541; color: var(--primary); }
+.about-hardberg p { margin: 1em; color: #F8F4EE; text-align: left; }
+
+.contact-profiles { text-align: center; }
+.contact-profiles .profiles h2, .contact-profiles .profiles h2 { font-size: 2.5em; font-weight: 350; color: #F8F4EE; }
+.contact-profiles .profiles .profile-img, .contact-profiles .profiles .profile-img { border-radius: 1em; margin-top: 1em; width: 90%; }
+
+@media (min-width: 631px) { .start { flex-direction: row; justify-content: space-evenly; /*
+Using "vh" and "vw" to keep the circle somewhat pretty when page is an odd aspect ratio or size
+*/ }
+  .start .text h1 { text-align: left; }
+  .start .buy-circle { background: linear-gradient(135deg, var(--primary), var(--secondary)); height: 55vh; width: 55vh; text-align: center; border-radius: 50%; }
+  .start .buy-circle .buy-container { display: flex; flex-direction: column; align-items: center; }
+  .start .buy-circle p { font-size: 5vh; position: relative; top: 2em; color: var(--secondary); }
+  .start .buy-circle .buy { cursor: pointer; width: 15vw; height: 11vh; background: var(--secondary); }
+  .start .buy-circle .buy .buy-text h2 { font-size: 6vh; color: var(--primary); }
   .start .subtext { display: flex; align-items: center; }
-  .start .subtext p { max-width: 14ch; font-size: clamp(0.2rem, calc(0.5rem + 2vw), 2.5rem); }
-  .start .subtext .one-place { padding: 1rem; }
-  .start .subtext .one-place p { margin: 0; min-width: 20rem; }
+  .start .subtext p { max-width: 14ch; font-size: 1.75rem; }
+  .start .subtext .one-place { padding: 1rem; max-width: 14.5em; }
+  .start .subtext .one-place p { margin: 0; min-width: 20rem; text-align: center; }
   .start .subtext .clean { flex-direction: column; border: none; border-left: 0.1rem solid var(--primary); border-right: 0.1rem solid var(--primary); padding: 1rem; }
   .start .subtext .clean p { margin: 0; }
   .start .subtext .repairability { flex-direction: column; border: none; padding: 1rem; }
-  .start .subtext .repairability p { margin: 0; } }
+  .start .subtext .repairability p { margin: 0; }
+  .slideshow, .about-hardberg, .contact-profiles { width: 90%; margin: auto; }
+  .slideshow p, .about-hardberg p, .contact-profiles p { font-size: 150%; }
+  .why-lm1, .why-hardberg, .why-not-contact { text-align: center; }
+  .contact-profiles { /*
+display: flex;
+justify-content: space-between;
+gap: 0.2em;
+*/ margin: auto; max-width: 70ch; }
+  .contact-profiles .profiles { padding-top: 0.8rem; } }

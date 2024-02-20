@@ -1,0 +1,130 @@
+---
+---
+
+.content {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    span {
+        font-weight: 500;
+    }
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+
+    svg {
+        width: 0;
+        fill: var(--text);
+    }
+    h2 {
+        font-weight: 300;
+        font-size: 2em;
+        color: var(--primary);
+        margin: 0.5em 0.5em 0em;
+    }
+    span {
+        color: var(--accent);
+    }
+    p {
+        color: #F8F4EE;
+        margin: 1em 1em 1em;
+    }
+}
+.about-hardberg-title {
+    h1 {
+        font-size: 4.7em;
+    }
+    span {
+        color: var(--text);
+    }
+}
+.sustainability, .what-is-uf, .right-to-repair {
+    background: var(--secondary);
+    border-radius: 1em;
+}
+.sustainability {
+    margin-top: 1em;
+}
+.who-are-we {
+    padding-top: 4em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    h2, h3, p {
+        text-align: left;
+        padding-left: 1rem;
+    }
+
+    h2 {
+        padding-top: 0.3em;
+        font-size: 3.7em;
+        font-weight: 300;
+        margin: 0;
+        color: #F8F4EE;
+    }
+    h3 {
+        font-size: 1.75em;
+        font-weight: 300;
+        margin: 0;
+        color: var(--accent);
+    }
+    p {
+        font-size: 1.5em;
+        margin-top: 0.5em;
+        color: #F8F4EE;
+    }
+}
+
+.andreas, .alfons, .max, .gustav {
+    background: var(--secondary);
+    padding: 2em 1em 1em;
+    border-radius: 1em;
+    text-align: center;
+
+    img {
+        max-width: 90%;
+        border-radius: 1em;
+    }
+}
+
+@media (min-width: 631px) {
+    .content {
+        padding: 0 3em 0;
+    }
+    .info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5em;
+        
+        .sustainability {
+            margin-top: 0em;
+        }
+        svg {
+            width: 40%;
+            margin: auto;
+        }
+        h2 {
+            font-size: 2.5em;
+            margin: 0.6em 0.4em 0;
+        }
+        p {
+            font-size: 1.5em;
+            margin: 0.5em 0.6em 1em;
+        }
+    }
+    .who-are-we {
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5em;
+    }
+    .who-container {
+        padding-top: 10em;
+        h1 {
+            margin: 0 0 0.2em;
+        }
+    }
+}

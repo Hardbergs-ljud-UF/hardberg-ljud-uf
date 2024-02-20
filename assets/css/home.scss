@@ -31,7 +31,7 @@ h1 {
 
         div {
             svg {
-                stroke: white;
+                stroke: var(--text);
                 height: clamp(1rem, calc(1.5rem + 5vw), 3rem);
             }
         }
@@ -51,7 +51,7 @@ h1 {
         border-bottom: 0.1rem solid var(--primary);
     
         svg {
-            stroke: white;
+            stroke: var(--text);
             height: clamp(1rem, calc(1.2rem + 5vw), 3rem);
         }
     
@@ -70,7 +70,7 @@ h1 {
         border-bottom: 0.1rem solid var(--primary);
     
         svg {
-            fill: white;
+            fill: var(--text);
             height: clamp(1rem, calc(1.2rem + 5vw), 3rem);
         }
     
@@ -80,53 +80,218 @@ h1 {
         }
     }
 }
+.buy-circle {
+    p {
+        font-size: 0;
+    }
+    a {
+        text-decoration: none;
+    }
+    width: 100%;
+    .buy {
+        height: 5rem;
+        overflow: hidden;
 
-.buy {
-    height: 5rem;
-    overflow: hidden;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        border-radius: 3rem;
 
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    border-radius: 3rem;
+        margin-top: 3rem;
 
-    margin-top: 3rem;
-    width: 15rem;
+        .buy-text {
+            padding: 0rem 1rem 0rem 1rem;
+            transition: 0.4s cubic-bezier(0.3, 0.8, 0.8, 0.3);
+            transform: translateY(-80%);
 
-    .buy-text {
-        padding: 0rem 1rem 0rem 1rem;
-        transition: 0.4s cubic-bezier(0.3, 0.8, 0.8, 0.3);
-        transform: translateY(-80%);
-
-        h2 {
-            font-size: 3rem;
-            text-align: center;
-            color: var(--accent);
+            h2 {
+                font-size: 3rem;
+                text-align: center;
+                color: var(--accent);
+            }
         }
     }
 }
 .buy:hover .buy-text {
     transform: translateY(-20%);
 }
+.why-lm1, .why-hardberg, .why-not-contact {
+    padding-top: 0.5em;
+    font-weight: 300;
+    font-size: 2.5em;
+}
+.slideshow, .about-hardberg, .profiles {
+    background-color: var(--secondary);
+    padding: 0.1em;
+    border-radius: 1em;
+    max-width: 100%;
+}
+.slideshow {
+    position: relative;
+    max-width: 70ch;
+    //height: 22em; <--- ifall man vill ha en höjd på slideshowen, ser dock fult ut med de korta styckena
 
+    .slides {
+        margin-left:2em; 
+        padding-bottom: 1em;
+        margin-right:2em;
+        p {
+            display: block;
+            color: #F8F4EE;
+        }
+    }
+    
+    .slideshow-buttons, .title-container {
+        text-align: center;
+
+        .slideshow-prev, .slideshow-next {
+            padding: 0.4em;
+            font-size: 1.5em;
+            cursor: pointer;
+            user-select: none;
+            position: absolute;
+            top: 3em;
+            color: #F8F4EE;
+        }
+        .slideshow-next {
+            right: 0;
+        }
+        .slideshow-prev {
+            left: 0;
+        }
+        .slideshow-next:hover, .slideshow-prev:hover {
+            background-color: #04040f;
+            border-radius: 0.5em;
+        }
+        .spacer {
+            color: #F8F4EE;
+            font-weight: 300;
+        }
+        h3 {
+            display: inline-block;
+        }
+    }
+    .title, .title-active {
+        display:inline-block;
+        cursor: pointer;
+        transition: 0.25s;
+    }
+    .title {
+        color: var(--primary);
+    }
+    .title-active {
+        color: var(--accent);
+    }
+    .title:hover {
+        color: var(--accent);
+    }
+}
+.about-hardberg {
+    padding-bottom: 1em;
+    text-align: center;
+    max-width: 70ch;
+    
+    .about-btn {
+        background-color: var(--primary);
+        color: var(--secondary);
+        text-decoration: none;
+        padding: 0.1em 0.5em;
+        border-radius: 1em;
+        font-size: 2em;
+        transition: 0.25s ease;
+    }
+    .about-btn:hover {
+        background-color: #0e1541;//var(--secondary);//#104f54;
+        color: var(--primary);
+
+    }
+    p {
+        margin: 1em;
+        color: #F8F4EE;
+        text-align: left;
+    }
+}
+.contact-profiles {
+    text-align: center;
+    .profiles, .profiles {
+        h2 {
+            font-size: 2.5em;
+            font-weight: 350;
+            color:#F8F4EE;
+        }
+        .profile-img {
+            border-radius: 1em;
+            margin-top: 1em;
+            width: 90%;
+        }
+    }
+}
 
 @media (min-width: 631px) {
     .start {
         flex-direction: row;
+        //margin-left: 4rem;
+        justify-content: space-evenly;
+        .text {
+            h1 {
+                text-align: left;
+            }
+        }
 
+        /*
+        Using "vh" and "vw" to keep the circle somewhat pretty when page is an odd aspect ratio or size
+        */
+        .buy-circle {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            height: 55vh;
+            width: 55vh;
+            text-align: center;
+            border-radius: 50%;
+
+            .buy-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            
+            p {
+                font-size: 5vh;
+                position: relative;
+                top: 2em;
+                color: var(--secondary);
+            }
+
+            .buy {
+
+                cursor: pointer;
+                width: 15vw;
+                height: 11vh;
+                background: var(--secondary);
+
+                .buy-text {
+                    h2 {
+                        font-size: 6vh;
+                        color: var(--primary);
+                    }
+                }
+            }
+        }
         .subtext {
             display: flex;
             align-items: center;
 
             p {
                 max-width: 14ch;
-                font-size: clamp(0.2rem, calc(0.5rem + 2vw), 2.5rem);
+                //font-size: clamp(0.2rem, calc(0.5rem + 2vw), 1.75rem); <- unecessarily complicated? or is there a reason?
+                font-size: 1.75rem;
             }
 
             .one-place {
                 padding: 1rem;
-
+                max-width: 14.5em;
                 p {
                     margin: 0;
                     min-width: 20rem;
+                    text-align: center;
                 }
             }
             .clean {
@@ -149,6 +314,30 @@ h1 {
                     margin: 0;
                 }
             }
+        }
+    }
+
+    .slideshow, .about-hardberg, .contact-profiles {
+        p {
+            font-size: 150%;
+        }
+        width: 90%;
+        margin:auto;
+        
+    }
+    .why-lm1, .why-hardberg, .why-not-contact {
+        text-align: center;
+    }
+    .contact-profiles {
+        /*
+        display: flex;
+        justify-content: space-between;
+        gap: 0.2em;
+        */
+        margin: auto;
+        max-width: 70ch;
+        .profiles {
+            padding-top: 0.8rem;
         }
     }
 }

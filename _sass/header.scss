@@ -5,7 +5,7 @@ header {
 
 .profile {
     display: grid;
-
+    height: 4em;
     margin: 1em 0em 0em 1em;
 
     img, .js-menu {
@@ -22,7 +22,7 @@ header {
         display: flex;
         flex-direction: column;
         visibility: visible;
-        z-index: 2;
+        z-index: 3;
 
         transition: transform 0.5s ease-in-out;
 
@@ -37,12 +37,15 @@ header {
             height: 0.3em;
             margin-top: auto;
             margin-bottom: auto;
-            background-color: var(--secondary);
+            background-color: var(--accent);
             transition: transform 0.5s ease-in, opacity 0.3s linear, background-color 0.3s ease-in-out;
         }
     }
     .menu-active {
+        position: fixed;
+        z-index: 3;
         transform: rotate(360deg);
+
         :nth-child(1) {
             transform: translateY(1em) rotate(45deg);
         }
@@ -55,22 +58,31 @@ header {
     }
 }
 
+
 .nav {
+    z-index: 2;
+    top: 0;
+    position: fixed;
+    padding-top: 5em;
+    height: 100%;
     width: 100%;
 
-    transform: translateY(-120%);
+    transform: translateX(-120%);
     visibility: collapse;
+    background: var(--background);
 
-    transition: all 1s ease-out;
+    transition: all 0.5s ease-out;
 
     ul {
-        padding: 0;
+        border-radius: 0.4em;
+        padding: 0.4em;
         list-style-type: none;
     }
 }
 .nav-active {
     visibility: visible;
-    transform: translateY(0%);
+    transform: translateX(0%);
+    z-index: 2;
 }
 .active-page {
     color: var(--primary) !important; // Could not solve any other way
@@ -88,7 +100,7 @@ header {
         font-weight: 100;
         text-decoration: none;
 
-        color: var(--secondary);
+        color: var(--text);
 
         transition: color 0.3s ease-in-out;
 
@@ -107,6 +119,8 @@ header {
 @media (min-width: 631px) {
     header {
         flex-direction: row;
+        background: url("/assets/images/banner-cropped.png");
+        padding-bottom: 1rem;
     }
 
     .profile {
@@ -120,16 +134,26 @@ header {
         }
     }
     .nav {
+        height: 0;
         position: absolute;
         left: 50%;
         transform: translateX(-50%) translateY(0%);
         visibility: visible;
         width: max-content;
+        background: rgba(0,0,0,0);
+        padding-top: 0;
+
+        ul {
+            background-color: #0e13336c;
+        }
+        a {
+            color: #F8F4EE;
+        }
     }
     .nav-link {
         display: inline-block;
-        border-left: solid 0.05em var(--secondary);
-        border-right: solid 0.05em var(--secondary);
+        border-left: solid 0.05em #F8F4EE;
+        border-right: solid 0.05em #F8F4EE;
         border-bottom: none;
 
         transition: border-color 0.3s ease-in-out;
