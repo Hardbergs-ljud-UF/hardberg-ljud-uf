@@ -1,17 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap");
 body { --background: #F8F4EE; --text: #0B0A07; --primary: #1ED5E8; --secondary: #0E1333; --accent: #F97F08; font-family: "Noto Sans", sans-serif; margin: 0; }
 
-body { font-family: 'Noto Sans', san-serif; color: var(--text); background-color: var(--bg); height: 90vh; }
-body header, body footer { display: flex; align-items: center; justify-content: center; height: 20vh; }
-body .scroller { max-width: 800px; overflow: hidden; mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent); -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent); }
-body .scroller .scroller-inner { display: flex; min-width: max-content; animation: scroll 20s linear infinite; }
-body .scroller .scroller-inner h1 { padding: 0rem 1rem 0rem 1rem; }
-body .scroller .scroller-inner h1 span { color: var(--primary); }
-body main { display: flex; align-items: center; justify-content: center; }
-body main .rectangle { height: 10rem; overflow: hidden; background-color: var(--secondary); border-radius: 2rem; }
-body main .rectangle .text { padding: 0rem 1rem 0rem 1rem; transition: 0.4s cubic-bezier(0.3, 0.8, 0.8, 0.3); transform: translateY(-70%); }
-body main .rectangle .text h1 { font-size: 5rem; }
-body main .rectangle:hover .text { transform: translateY(-10%); }
+@media (prefers-color-scheme: dark) { body { --background: #0B0A07; --text: #F8F4EE; --primary: #1ED5E8; --secondary: #0E1333; --accent: #F97F08; } }
+body { background-color: var(--background); }
 
 h1 { color: var(--text); font-weight: 100; font-size: 5rem; }
 
