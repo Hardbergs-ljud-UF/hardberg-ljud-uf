@@ -1,0 +1,169 @@
+header {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile {
+    display: grid;
+    height: 4em;
+    margin: 1em 0em 0em 1em;
+
+    img, .js-menu {
+        width: 3em;
+        height: 3em;
+
+        grid-row: 1;
+        grid-column: 1;
+    }
+    img {
+        visibility: hidden;
+    }
+    .js-menu {
+        display: flex;
+        flex-direction: column;
+        visibility: visible;
+        z-index: 3;
+
+        transition: transform 0.5s ease-in-out;
+
+        &:hover {
+            cursor: pointer;
+            div {
+                background-color: var(--accent);
+            }
+        }
+        div {
+            width: auto;
+            height: 0.3em;
+            margin-top: auto;
+            margin-bottom: auto;
+            background-color: var(--accent);
+            transition: transform 0.5s ease-in, opacity 0.3s linear, background-color 0.3s ease-in-out;
+        }
+    }
+    .menu-active {
+        position: fixed;
+        z-index: 3;
+        transform: rotate(360deg);
+
+        :nth-child(1) {
+            transform: translateY(1em) rotate(45deg);
+        }
+        :nth-child(2) {
+            opacity: 0;
+        }
+        :nth-child(3) {
+            transform: translateY(-1em) rotate(-45deg);
+        }
+    }
+}
+
+
+.nav {
+    z-index: 2;
+    top: 0;
+    position: fixed;
+    padding-top: 5em;
+    height: 100%;
+    width: 100%;
+
+    transform: translateX(-120%);
+    visibility: collapse;
+    background: var(--background);
+
+    transition: all 0.5s ease-out;
+
+    ul {
+        border-radius: 0.4em;
+        padding: 0.4em;
+        list-style-type: none;
+    }
+}
+.nav-active {
+    visibility: visible;
+    transform: translateX(0%);
+    z-index: 2;
+}
+.active-page {
+    color: var(--primary) !important; // Could not solve any other way
+    font-weight: 300;
+}
+.nav-link {
+    display: block;
+    padding: 0 1em 0 1em;
+
+    a {
+        display: inline-block;
+        width: 100%;
+
+        font-size: 4em;
+        font-weight: 100;
+        text-decoration: none;
+
+        color: var(--text);
+
+        transition: color 0.3s ease-in-out;
+
+        &:hover {
+            color: var(--accent) !important; // Could not solve any other way
+        }
+    }
+}
+
+@media (max-width: 630px) {
+    .nav-link {
+        border-bottom: solid 0.1em var(--secondary);
+    }
+}
+
+@media (min-width: 631px) {
+    header {
+        flex-direction: row;
+        background: url("/assets/images/banner-cropped.png");
+        padding-bottom: 1rem;
+    }
+
+    .profile {
+        img {
+            visibility: visible;
+            height: clamp(3rem, 5vw, 4rem);
+            width: clamp(3rem, 5vw, 4rem);
+        }
+        .js-menu {
+            visibility: hidden;
+        }
+    }
+    .nav {
+        height: 0;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%) translateY(0%);
+        visibility: visible;
+        width: max-content;
+        background: rgba(0,0,0,0);
+        padding-top: 0;
+
+        ul {
+            background-color: #0e13336c;
+        }
+        a {
+            color: #F8F4EE;
+        }
+    }
+    .nav-link {
+        display: inline-block;
+        border-left: solid 0.05em #F8F4EE;
+        border-right: solid 0.05em #F8F4EE;
+        border-bottom: none;
+
+        transition: border-color 0.3s ease-in-out;
+
+        a {
+            font-size: clamp(1.75rem, 3vw, 3rem);
+        }
+
+        &:hover {
+            border-color: var(--accent);
+        }
+    }
+}
